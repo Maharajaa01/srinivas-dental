@@ -706,9 +706,9 @@ export default function Home() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center">
                   <i className="ri-tooth-line text-white text-lg sm:text-xl"></i>
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold" style={{ fontFamily: '"Pacifico", serif' }}>
+                {/* <div className="text-2xl sm:text-3xl font-bold" style={{ fontFamily: '"Pacifico", serif' }}>
                   Srinivas Dental
-                </div>
+                </div> */}
               </div>
               <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed max-w-md text-sm sm:text-base">
                 Your trusted partner for comprehensive dental care and beautiful smiles. Experience the difference of personalized, professional dental treatment.
