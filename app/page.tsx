@@ -4,6 +4,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+
+
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -13,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -181,7 +184,7 @@ export default function Home() {
             <div className="flex items-center space-x-2 sm:space-x-4">
               <div className="hidden md:flex items-center text-blue-600">
                 <i className="ri-phone-line mr-2"></i>
-                <span className="font-semibold text-sm lg:text-base">+91 98765 43210</span>
+                <span className="font-semibold text-sm lg:text-base">+91 98847 15109</span>
               </div>
               <button 
                 onClick={handleBookAppointment}
@@ -212,7 +215,7 @@ export default function Home() {
                 <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contact</a>
                 <div className="flex items-center text-blue-600 pt-2">
                   <i className="ri-phone-line mr-2"></i>
-                  <span className="font-semibold">+91 98765 43210</span>
+                  <span className="font-semibold">+91 98847 15109</span>
                 </div>
               </div>
             </div>
@@ -364,8 +367,8 @@ export default function Home() {
                 <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 sm:mt-3 flex-shrink-0"></div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 text-base sm:text-lg">Bachelor of Dental Surgery (BDS)</h4>
-                    <p className="text-gray-600 text-sm sm:text-base">Government Dental College, Chennai</p>
+                    <h4 className="font-semibold text-gray-900 text-base sm:text-lg"> Master of Dental Surgery in Orthodontics (MDS)</h4>
+                    <p className="text-gray-600 text-sm sm:text-base">SRM Dental College, Chennai</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3 sm:space-x-4">
@@ -633,7 +636,7 @@ export default function Home() {
                     <div>
                       <h4 className="font-semibold text-gray-900 text-base sm:text-lg mb-2">Phone & WhatsApp</h4>
                       <p className="text-gray-600 text-sm sm:text-base">
-                        <a href="tel:+919876543210" className="hover:text-blue-600 transition-colors">+91 98765 43210</a><br />
+                        <a href="tel:+919876543210" className="hover:text-blue-600 transition-colors">+91 98847 15109</a><br />
                         <a href="tel:+914428765432" className="hover:text-blue-600 transition-colors">+91 44 2876 5432</a>
                       </p>
                     </div>
@@ -678,19 +681,20 @@ export default function Home() {
       {/* Google Maps */}
       <div className="h-64 sm:h-80 lg:h-96 relative">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5644564305647!2d80.23659931482171!3d13.017663990831324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526650e0b6c595%3A0x4f74ddbff946af6b!2sChennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1510579767645"
+        
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15544.470444309196!2d80.20815830297941!3d13.09173199224047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526421fb57c9a9%3A0xc66575855a337594!2sSrinivas%20Multi%20Speciality%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1752945647164!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className="grayscale hover:grayscale-0 transition-all duration-300"
+          // className="grayscale hover:grayscale-0 transition-all duration-300"
         ></iframe>
-        <div className="absolute top-4 sm:top-6 left-4 sm:left-6 bg-white rounded-xl p-3 sm:p-4 shadow-lg">
-          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">Srinivas Dental Clinic</h4>
-          <p className="text-xs sm:text-sm text-gray-600">Chennai, Tamil Nadu</p>
-        </div>
+        {/* <div className="absolute top-4 sm:top-6 left-4 sm:left-6 bg-white rounded-xl p-3 sm:p-4 shadow-lg"> */}
+          {/* <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">Srinivas Multi Speciality Dental Clinic</h4> */}
+          {/* <p className="text-xs sm:text-sm text-gray-600">Chennai, Tamil Nadu</p> */}
+        {/* </div> */}
       </div>
 
       {/* Footer */}
@@ -749,7 +753,7 @@ export default function Home() {
           <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
-                2024 Srinivas Dental. All rights reserved.
+                2025 Srinivas Dental. All rights reserved.
               </p>
               <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6">
                 <a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors cursor-pointer">Privacy Policy</a>
@@ -762,14 +766,15 @@ export default function Home() {
       </footer>
 
       {/* WhatsApp Floating Button */}
-      <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
+      {/* <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
         <button className="bg-green-500 hover:bg-green-600 text-white w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-2xl hover:shadow-3xl transition-all transform hover:scale-110 flex items-center justify-center cursor-pointer group">
           <i className="ri-whatsapp-line text-2xl sm:text-3xl group-hover:animate-pulse"></i>
         </button>
         <div className="absolute -top-10 sm:-top-12 right-0 bg-gray-900 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           Chat with us!
         </div>
-      </div>
+      </div> */}
+      {/* <div className="elfsight-app-86d37a36-9f83-491b-ab7c-253f2eabf3c5" data-elfsight-app-lazy></div> */}
 
       {/* Custom Styles */}
       <style jsx>{`

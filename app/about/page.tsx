@@ -34,7 +34,7 @@ export default function AboutPage() {
             <div className="flex items-center space-x-2 sm:space-x-4">
               <div className="hidden md:flex items-center text-blue-600">
                 <i className="ri-phone-line mr-2"></i>
-                <span className="font-semibold text-sm lg:text-base">+91 98765 43210</span>
+                <span className="font-semibold text-sm lg:text-base">+91 98847 15109</span>
               </div>
               <Link href="/#contact" className="bg-blue-600 text-white px-3 sm:px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer font-semibold text-sm sm:text-base">
                 <span className="hidden sm:inline">Book Appointment</span>
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 <Link href="/#contact" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contact</Link>
                 <div className="flex items-center text-blue-600 pt-2">
                   <i className="ri-phone-line mr-2"></i>
-                  <span className="font-semibold">+91 98765 43210</span>
+                  <span className="font-semibold">+91 98847 15109</span>
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Vision For Dr. Srinivas Dentistry - Best Dental Clinic</h2>
-            <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-600 mb-6 sm:mb-8">And Meet Dr. Divya – Our Smile Maestro</h3>
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-600 mb-6 sm:mb-8">And Meet Dr. Priya – Our Smile Maestro</h3>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-start">
@@ -100,8 +100,8 @@ export default function AboutPage() {
                   Welcome to Dr. Srinivas Dentistry, the premier destination for the best dental care in 
                   Tamil Nadu. Whether you're seeking the expertise of a qualified dentist, regular dental 
                   service, or cosmetic dentistry, we're dedicated to providing exceptional dental services 
-                  that cater to your family's needs. Located conveniently near Velachery, Adyar, and 
-                  Besant Nagar, our clinic offers a comfortable and welcoming environment where you can feel 
+                  that cater to your family's needs. Located conveniently near Mogappair, and 
+                  Anna Nagar, our clinic offers a comfortable and welcoming environment where you can feel 
                   at ease. Come and visit us.
                 </p>
                 
@@ -115,8 +115,8 @@ export default function AboutPage() {
               <div>
                 <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Our Mission</h4>
                 <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                  Dr. Divya is committed to the patient care of our elite team which had years and 
-                  The passion of an artist. This unique combination makes Dr. Divya a true connoisseur of 
+                  Dr.Priya is committed to the patient care of our elite team which had years and 
+                  The passion of an artist. This unique combination makes Dr.Priya a true connoisseur of 
                   dentistry, committed to bringing both and illuminating smiles.
                 </p>
               </div>
@@ -124,7 +124,7 @@ export default function AboutPage() {
               <div>
                 <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Our Vision</h4>
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                  Divya worked as an FMC house postgraduate at Goa Dentistry Chennai for 3 years and 
+                  Dr.Priya worked as an FMC house postgraduate at Goa Dentistry Chennai for 3 years and 
                   served as a consultant at other premier clinics in Chennai and Bengaluru for over 5 
                   years before starting her own practice.
                 </p>
@@ -134,12 +134,12 @@ export default function AboutPage() {
             <div className="relative order-1 lg:order-2">
               <img 
                 src="https://readdy.ai/api/search-image?query=professional%20female%20indian%20dentist%20Dr.%20Divya%20in%20modern%20dental%20clinic%2C%20confident%20smile%2C%20white%20medical%20coat%2C%20professional%20dental%20setting%2C%20warm%20caring%20expression%2C%20quality%20healthcare%20provider&width=500&height=600&seq=dr-divya-about&orientation=portrait"
-                alt="Dr. Divya - Our Smile Maestro"
+                alt="Dr.Deepak Victor - Our Smile Maestro"
                 className="rounded-3xl shadow-2xl object-cover w-full h-80 sm:h-96 lg:h-[500px]"
               />
               <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white rounded-2xl p-4 sm:p-6 shadow-xl">
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-blue-600">BDS</div>
+                  <div className="text-xl sm:text-2xl font-bold text-blue-600">MDS</div>
                   <div className="text-xs sm:text-sm text-gray-600">Qualified Dentist</div>
                 </div>
               </div>
@@ -182,47 +182,55 @@ export default function AboutPage() {
                 position: 'Chief Dental Officer & Founder',
                 specialization: 'General & Cosmetic Dentistry',
                 experience: '15+ Years',
-                education: 'BDS - Government Dental College',
+                education: 'MDS - SRM Dental College',
                 image: 'senior indian female dentist Dr. Kamalavizhi Srinivas, experienced dental professional, confident medical expert, dental clinic founder'
               },
               {
-                name: 'Dr. Divya',
+                name: 'Dr.Sripal',
                 position: 'Smile Maestro & Cosmetic Specialist',
                 specialization: 'Aesthetic & Restorative Dentistry',
                 experience: '8+ Years',
-                education: 'BDS, Advanced Cosmetic Training',
-                image: 'young indian female dentist Dr. Divya, cosmetic dentistry specialist, professional dental expert, modern clinic setting'
+                education: 'MDS, Advanced Cosmetic Training',
+                image: 'young indian female dentist Dr.Sripal, cosmetic dentistry specialist, professional dental expert, modern clinic setting'
               },
               {
-                name: 'Priya Sharma',
+                name: 'Dr.Deepak Victor',
                 position: 'Senior Dental Hygienist',
                 specialization: 'Preventive Care & Education',
                 experience: '10+ Years',
-                education: 'Diploma in Dental Hygiene',
+                education: 'Masters in Dental Hygiene',
                 image: 'indian dental hygienist professional woman in medical scrubs, dental clinic team member, preventive care specialist'
               },
               {
-                name: 'Rajesh Kumar',
-                position: 'Dental Assistant & Coordinator',
-                specialization: 'Patient Care & Coordination',
+                name: 'Dr.Tamilazhagan',
+                position: 'Dental Surgen & Coordinator',
+                specialization: 'Orthodontics',
                 experience: '7+ Years',
                 education: 'Certified Dental Assistant',
                 image: 'indian male dental assistant in medical uniform, professional dental clinic staff, patient care coordinator'
               },
               {
-                name: 'Anitha Reddy',
-                position: 'Practice Manager',
-                specialization: 'Operations & Patient Relations',
+                name: 'Dr.Swaminathan',
+                position: 'Senior Doctor',
+                specialization: 'Orthodontics',
                 experience: '12+ Years',
                 education: 'MBA Healthcare Management',
                 image: 'indian female practice manager in professional attire, healthcare administration professional, dental clinic management'
               },
               {
-                name: 'Vikram Patel',
-                position: 'Dental Technician',
-                specialization: 'Lab Work & Prosthetics',
+                name: 'Dr.Vamsi Lavu',
+                position: 'Senior Doctor',
+                specialization: 'Orthodontics',
                 experience: '9+ Years',
-                education: 'Diploma in Dental Technology',
+                education: 'Master of Dental Surgery in Orthodontics',
+                image: 'indian male dental technician in lab coat, dental laboratory professional, prosthetics specialist working'
+              },
+                {
+                name: 'Dr.Sushil Chakravarthy',
+                position: 'Senior Doctor',
+                specialization: 'Orthodontics',
+                experience: '9+ Years',
+                education: 'Master of Dental Surgery in Orthodontics',
                 image: 'indian male dental technician in lab coat, dental laboratory professional, prosthetics specialist working'
               }
             ].map((member, index) => (
@@ -408,7 +416,7 @@ export default function AboutPage() {
             </Link>
             <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer">
               <i className="ri-phone-line mr-2"></i>
-              Call +91 98765 43210
+              Call +91 98847 15109
             </button>
           </div>
         </div>
@@ -445,14 +453,14 @@ export default function AboutPage() {
             <div>
               <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Contact Info</h4>
               <div className="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
-                <p>+91 98765 43210</p>
+                <p>+91 98847 15109</p>
                 <p>Chennai, Tamil Nadu</p>
               </div>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
-            <p className="text-gray-400 text-xs sm:text-sm">2024 Srinivas Dental. All rights reserved.</p>
+            <p className="text-gray-400 text-xs sm:text-sm">2025 Srinivas Dental. All rights reserved.</p>
           </div>
         </div>
       </footer>

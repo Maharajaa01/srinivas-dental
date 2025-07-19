@@ -27,7 +27,7 @@ export default function SmileDesignPage() {
             <div className="flex items-center space-x-4">
               <div className="hidden sm:flex items-center text-blue-600">
                 <i className="ri-phone-line mr-2"></i>
-                <span className="font-semibold">+91 98765 43210</span>
+                <span className="font-semibold">+91 98847 15109</span>
               </div>
               <Link href="/#contact" className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer font-semibold">
                 Book Appointment
@@ -355,7 +355,7 @@ export default function SmileDesignPage() {
             </Link>
             <button className="border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer">
               <i className="ri-phone-line mr-2"></i>
-              Call +91 98765 43210
+              Call +91 98847 15109
             </button>
           </div>
         </div>
@@ -392,14 +392,14 @@ export default function SmileDesignPage() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Contact Info</h4>
               <div className="space-y-3 text-gray-400">
-                <p>+91 98765 43210</p>
+                <p>+91 98847 15109</p>
                 <p>Chennai, Tamil Nadu</p>
               </div>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-            <p className="text-gray-400 text-sm">2024 Srinivas Dental. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">2025 Srinivas Dental. All rights reserved.</p>
           </div>
         </div>
       </footer>
