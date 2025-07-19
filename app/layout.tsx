@@ -22,8 +22,31 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Srinivas Dental",
-  description: "Created By MAVX Tech",
+  description: "Comprehensive dental care by Dr. Kamalavizhi Srinivas. Trusted by families in Chennai.",
+  openGraph: {
+    title: "Srinivas Dental",
+    description: "Comprehensive dental care by Dr. Kamalavizhi Srinivas. Trusted by families in Chennai.",
+    url: "https://srinivas-dental.vercel.app", // Replace with your actual domain
+    siteName: "Srinivas Dental",
+    images: [
+      {
+        url: "/og.png", // Provide an image in public folder (ideal: 1200x630)
+        width: 1200,
+        height: 630,
+        alt: "Srinivas Dental Clinic - Quality Smile Care",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Srinivas Dental",
+    description: "Comprehensive dental care by Dr. Kamalavizhi Srinivas. Trusted by families in Chennai.",
+    images: ["/og.png"], // Same image as above
+  },
 };
+
 
 export default function RootLayout({
   children,
