@@ -20,7 +20,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Srinivas Dental",
+  title: "Srinivas Dental...",
+  description: "Comprehensive dental care by Dr. Kamalavizhi Srinivas. Trusted by families in Chennai.",
+
 };
 
 // export const metadata: Metadata = {
