@@ -60,10 +60,13 @@ export default function SmileDesignPage() {
                   <i className="ri-calendar-line mr-2"></i>
                   Free Smile Analysis
                 </Link>
+                <a href="tel:98884715109">
+
                 <button className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer">
                   <i className="ri-phone-line mr-2"></i>
                   Call Now
                 </button>
+                </a>
               </div>
             </div>
             <div className="relative">

@@ -60,10 +60,13 @@ export default function KidsDentalPage() {
                   <i className="ri-calendar-line mr-2"></i>
                   Book Kids Appointment
                 </Link>
+                <a href="tel:98884715109">
+
                 <button className="border-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer">
                   <i className="ri-phone-line mr-2"></i>
                   Call Now
                 </button>
+                </a>
               </div>
             </div>
             <div className="relative">

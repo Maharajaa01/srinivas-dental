@@ -60,10 +60,13 @@ export default function BracesPage() {
                   <i className="ri-calendar-line mr-2"></i>
                   Free Consultation
                 </Link>
+                <a href="tel:98884715109">
+
                 <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer">
                   <i className="ri-phone-line mr-2"></i>
                   Call Now
                 </button>
+                </a>
               </div>
             </div>
             <div className="relative">
