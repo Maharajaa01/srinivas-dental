@@ -60,7 +60,7 @@ export default function TeethWhiteningPage() {
                   <i className="ri-calendar-line mr-2"></i>
                   Book Whitening Session
                 </Link>
-                <a href="tel:98884715109">
+                <a href="tel:9884715109">
                   
                 <button className="border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer">
                   <i className="ri-phone-line mr-2"></i>

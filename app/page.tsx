@@ -260,7 +260,7 @@ export default function Home() {
                   <i className="ri-calendar-line mr-2"></i>
                   Book Appointment
                 </button>
-                <a href="tel:98884715109">
+                <a href="tel:9884715109">
                 <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer">
                   <i className="ri-phone-line mr-2"></i>
                   Call Now
@@ -665,7 +665,7 @@ export default function Home() {
                 <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Quick Appointment</h4>
                 <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Need immediate care? Call us directly or send a WhatsApp message for fastest response.</p>
                 <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                  <a href="tel:98884715109">
+                  <a href="tel:9884715109">
 
 
                   <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-xl font-semibold transition-colors cursor-pointer text-sm sm:text-base">
