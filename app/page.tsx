@@ -773,7 +773,7 @@ export default function Home() {
                 className="text-gray-400 hover:text-white underline ml-1"
               >
                 MAVx
-              </a>.
+              </a>
   
               </p>
               <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6">
