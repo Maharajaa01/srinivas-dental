@@ -386,7 +386,14 @@ export default function TeethWhiteningPage() {
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-            <p className="text-gray-400 text-sm">2025 Srinivas Dental  All rights reserved Developed By MAVx  .</p>
+            <p className="text-gray-400 text-sm">2025 Srinivas Dental  All rights reserved Developed By                 <a 
+    href="https://mavx-tech.vercel.app/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="text-gray-400 hover:text-white underline ml-1"
+  >
+    MAVx
+  </a>.</p>
           </div>
         </div>
       </footer>

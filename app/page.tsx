@@ -766,7 +766,15 @@ export default function Home() {
           <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
-                2025 Srinivas Dental  All rights reserved Developed By MAVx  .
+                2025 Srinivas Dental  All rights reserved Developed By <a 
+                href="https://mavx-tech.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white underline ml-1"
+              >
+                MAVx
+              </a>.
+  
               </p>
               <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6">
                 <a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors cursor-pointer">Privacy Policy</a>
