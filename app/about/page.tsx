@@ -75,7 +75,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Welcome to Dr. Srinivas Dentistry
+              Welcome to Srinivas Dental Clinic
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-4">
               Changing Smiles. Changing Lives. Changing Dentistry.
@@ -89,7 +89,7 @@ export default function AboutPage() {
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Vision For Dr. Srinivas Dentistry - Best Dental Clinic</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Vision For Srinivas Dental - Best Dental Clinic</h2>
             <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-600 mb-6 sm:mb-8">And Meet Dr. Priya – Our Smile Maestro</h3>
           </div>
           
@@ -97,7 +97,7 @@ export default function AboutPage() {
             <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
               <div>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                  Welcome to Dr. Srinivas Dentistry, the premier destination for the best dental care in 
+                  Welcome to  Srinivas Dental, the premier destination for the best dental care in 
                   Tamil Nadu. Whether you're seeking the expertise of a qualified dentist, regular dental 
                   service, or cosmetic dentistry, we're dedicated to providing exceptional dental services 
                   that cater to your family's needs. Located conveniently near Mogappair, and 
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   Discover why we are recognized as the best dental clinic in Taramani for kids & 
-                  cosmetic dentistry. Join us at Dr. Srinivas Dentistry and experience superior dental care 
+                  cosmetic dentistry. Join us at Srinivas Dental and experience superior dental care 
                   today.
                 </p>
               </div>
@@ -133,9 +133,9 @@ export default function AboutPage() {
             
             <div className="relative order-1 lg:order-2">
               <img 
-                src="https://readdy.ai/api/search-image?query=professional%20female%20indian%20dentist%20Dr.%20Divya%20in%20modern%20dental%20clinic%2C%20confident%20smile%2C%20white%20medical%20coat%2C%20professional%20dental%20setting%2C%20warm%20caring%20expression%2C%20quality%20healthcare%20provider&width=500&height=600&seq=dr-divya-about&orientation=portrait"
+                src="./smile_dr.png"
                 alt="Dr.Deepak Victor - Our Smile Maestro"
-                className="rounded-3xl shadow-2xl object-cover w-full h-80 sm:h-96 lg:h-[500px]"
+                className="rounded-3xl shadow-2xl object-cover w-full h-90 sm:h-96 lg:h-[750px]"
               />
               <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white rounded-2xl p-4 sm:p-6 shadow-xl">
                 <div className="text-center">
@@ -460,7 +460,7 @@ export default function AboutPage() {
           </div>
           
           <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
-            <p className="text-gray-400 text-xs sm:text-sm">2025 Srinivas Dental. All rights reserved.</p>
+            <p className="text-gray-400 text-xs sm:text-sm">2025 Srinivas Dental  All rights reserved Developed By MAVx  .</p>
           </div>
         </div>
       </footer>

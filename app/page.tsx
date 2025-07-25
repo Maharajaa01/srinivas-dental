@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 
 
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -398,11 +399,14 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              
+                              
               <div className="pt-4 sm:pt-6">
+                <Link href="/about">
                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105 cursor-pointer text-sm sm:text-base">
                   View Full Profile
                 </button>
+              </Link>
+
               </div>
             </div>
           </div>
@@ -627,9 +631,9 @@ export default function Home() {
                     <div>
                       <h4 className="font-semibold text-gray-900 text-base sm:text-lg mb-2">Our Location</h4>
                       <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                        123 Medical Street, Health City<br />
-                        Chennai, Tamil Nadu 600001<br />
-                        Near Apollo Hospital
+                         G Block, , 
+                        No 6, G - Block, 15th Street,Anna Nagar<br />
+                        Chennai, Tamil Nadu 600040<br />
                       </p>
                     </div>
                   </div>
@@ -642,7 +646,7 @@ export default function Home() {
                       <h4 className="font-semibold text-gray-900 text-base sm:text-lg mb-2">Phone & WhatsApp</h4>
                       <p className="text-gray-600 text-sm sm:text-base">
                         <a href="tel:+919876543210" className="hover:text-blue-600 transition-colors">+91 98847 15109</a><br />
-                        <a href="tel:+914428765432" className="hover:text-blue-600 transition-colors">+91 44 2876 5432</a>
+                        {/* <a href="tel:+914428765432" className="hover:text-blue-600 transition-colors">+91 44 2876 5432</a> */}
                       </p>
                     </div>
                   </div>
@@ -762,7 +766,7 @@ export default function Home() {
           <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
-                2025 Srinivas Dental. All rights reserved.
+                2025 Srinivas Dental  All rights reserved Developed By MAVx  .
               </p>
               <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6">
                 <a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors cursor-pointer">Privacy Policy</a>
