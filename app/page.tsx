@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import ZohoWhatsappWidget from './component/ZohoWhatsappWidget';
 import Link from 'next/link';
 
 
@@ -20,14 +21,14 @@ export default function Home() {
     }, 500);
     return () => clearTimeout(timer);
   }, []);
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
-
+  
   const services = [
     { 
       icon: 'ri-health-book-line', 
@@ -72,7 +73,7 @@ export default function Home() {
       link: '/services/smile-design'
     }
   ];
-
+  
   const testimonials = [
     {
       name: 'Priya Sharma',
@@ -103,7 +104,7 @@ export default function Home() {
       treatment: 'Family Dentistry'
     }
   ];
-
+  
   const googleReviews = [
     {
       name: 'Meera Krishnan',
@@ -127,7 +128,7 @@ export default function Home() {
       verified: true
     }
   ];
-
+  
   if (isLoading) {
     return (
       <div className="fixed inset-0 bg-white flex items-center justify-center z-50">
@@ -145,19 +146,19 @@ export default function Home() {
       </div>
     );
   }
-
+  
   const handleBookAppointment = () => {
     // Scroll to contact section
     document.getElementById('contact')?.scrollIntoView({ 
       behavior: 'smooth',
       block: 'start'
     });
-
+    
     // Highlight the booking form
     setShowBookingHighlight(true);
     setTimeout(() => setShowBookingHighlight(false), 3000);
   };
-
+  
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -348,7 +349,7 @@ export default function Home() {
                   // src="https://readdy.ai/api/search-image?query=professional%20female%20indian%20dentist%20Dr.%20Kamalavizhi%20Srinivas%20in%20white%20medical%20coat%2C%20warm%20confident%20smile%2C%20modern%20dental%20clinic%20background%2C%20professional%20medical%20portrait%2C%20stethoscope%2C%20caring%20expression%2C%20bright%20lighting&width=600&height=700&seq=doctor-portrait&orientation=portrait"
                   alt="Dr. Kamalavizhi Srinivas"
                   className="rounded-3xl shadow-2xl object-cover w-full h-96 sm:h-96 lg:h-[830px]"
-                />
+                  />
               </div>
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl opacity-20 blur-xl"></div>
               <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 bg-blue-100 rounded-full flex items-center justify-center shadow-lg z-20">
@@ -459,11 +460,11 @@ export default function Home() {
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 cursor-pointer ${
                     index === currentTestimonial 
-                      ? 'bg-blue-600 scale-125' 
-                      : 'bg-gray-300 hover:bg-gray-400'
+                    ? 'bg-blue-600 scale-125' 
+                    : 'bg-gray-300 hover:bg-gray-400'
                   }`}
-                />
-              ))}
+                  />
+                ))}
             </div>
           </div>
         </div>
@@ -682,7 +683,13 @@ export default function Home() {
                   </a>
                   <button className="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-xl font-semibold transition-colors cursor-pointer text-sm sm:text-base">
                     <i className="ri-whatsapp-line mr-2"></i>
-                    WhatsApp
+                                      <a
+                    href="https://wa.me/919884715109"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Whatsapp
+                  </a>
                   </button>
                 </div>
               </div>
@@ -721,7 +728,7 @@ export default function Home() {
                 </div>
                 {/* <div className="text-2xl sm:text-3xl font-bold" style={{ fontFamily: '"Pacifico", serif' }}>
                   Srinivas Dental
-                </div> */}
+                  </div> */}
               </div>
               <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed max-w-md text-sm sm:text-base">
                 Your trusted partner for comprehensive dental care and beautiful smiles. Experience the difference of personalized, professional dental treatment.
@@ -785,16 +792,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <ZohoWhatsappWidget />
 
       {/* WhatsApp Floating Button */}
       {/* <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
         <button className="bg-green-500 hover:bg-green-600 text-white w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-2xl hover:shadow-3xl transition-all transform hover:scale-110 flex items-center justify-center cursor-pointer group">
           <i className="ri-whatsapp-line text-2xl sm:text-3xl group-hover:animate-pulse"></i>
-        </button>
-        <div className="absolute -top-10 sm:-top-12 right-0 bg-gray-900 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+          </button>
+          <div className="absolute -top-10 sm:-top-12 right-0 bg-gray-900 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           Chat with us!
-        </div>
-      </div> */}
+          </div>
+          </div> */}
       {/* <div className="elfsight-app-86d37a36-9f83-491b-ab7c-253f2eabf3c5" data-elfsight-app-lazy></div> */}
 
       {/* Custom Styles */}
@@ -815,7 +823,7 @@ export default function Home() {
         
         .animate-fade-in-delay {
           animation: fade-in 1s ease-out 0.3s both;
-        }
+          }
         
         .animate-fade-in-delay-2 {
           animation: fade-in 1s ease-out 0.6s both;

@@ -183,7 +183,7 @@ export default function AboutPage() {
                 specialization: 'General & Cosmetic Dentistry',
                 experience: '15+ Years',
                 education: 'MDS - SRM Dental College',
-                image: 'senior indian female dentist Dr. Kamalavizhi Srinivas, experienced dental professional, confident medical expert, dental clinic founder'
+                image: 'kamalavizhi.png'
               },
               {
                 name: 'Dr.Sripal',
@@ -191,7 +191,7 @@ export default function AboutPage() {
                 specialization: 'Aesthetic & Restorative Dentistry',
                 experience: '8+ Years',
                 education: 'MDS, Advanced Cosmetic Training',
-                image: 'young indian female dentist Dr.Sripal, cosmetic dentistry specialist, professional dental expert, modern clinic setting'
+                image: 'sripal.jpg'
               },
               {
                 name: 'Dr.Deepak Victor',
@@ -199,7 +199,8 @@ export default function AboutPage() {
                 specialization: 'Preventive Care & Education',
                 experience: '10+ Years',
                 education: 'Masters in Dental Hygiene',
-                image: 'indian dental hygienist professional woman in medical scrubs, dental clinic team member, preventive care specialist'
+                image: 'victor.jpg'
+
               },
               {
                 name: 'Dr.Tamilazhagan',
@@ -207,7 +208,7 @@ export default function AboutPage() {
                 specialization: 'Orthodontics',
                 experience: '7+ Years',
                 education: 'Certified Dental Assistant',
-                image: 'indian male dental assistant in medical uniform, professional dental clinic staff, patient care coordinator'
+                image: 'tamilazhagan.jpg'
               },
               {
                 name: 'Dr.Swaminathan',
@@ -215,7 +216,8 @@ export default function AboutPage() {
                 specialization: 'Orthodontics',
                 experience: '12+ Years',
                 education: 'MBA Healthcare Management',
-                image: 'indian female practice manager in professional attire, healthcare administration professional, dental clinic management'
+                image: 'swaminathan.jpg'
+
               },
               {
                 name: 'Dr.Vamsi Lavu',
@@ -223,7 +225,7 @@ export default function AboutPage() {
                 specialization: 'Orthodontics',
                 experience: '9+ Years',
                 education: 'Master of Dental Surgery in Orthodontics',
-                image: 'indian male dental technician in lab coat, dental laboratory professional, prosthetics specialist working'
+              image: 'vamsi.jpg'
               },
                 {
                 name: 'Dr.Sushil Chakravarthy',
@@ -231,14 +233,17 @@ export default function AboutPage() {
                 specialization: 'Orthodontics',
                 experience: '9+ Years',
                 education: 'Master of Dental Surgery in Orthodontics',
-                image: 'indian male dental technician in lab coat, dental laboratory professional, prosthetics specialist working'
+              image: 'sushil.jpg'
+                
               }
             ].map((member, index) => (
-              <div key={index} className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+              <div key={index} className="bg-white rounded-3xl p-6 sm:p-8  shadow-lg hover:shadow-xl transition-shadow text-center">
                 <div className="relative mb-4 sm:mb-6">
                   <img 
-                    src={`https://readdy.ai/api/search-image?query=$%7Bmember.image%7D&width=200&height=200&seq=team-${index + 1}&orientation=squarish`}
-                    alt={member.name}
+                    src={`/images/team/${member.image}`}
+                    // src='/images/team/kamalavizhi.png'
+
+                    // alt={member.name}
                     className="w-24 h-24 sm:w-32 sm:h-32 rounded-full mx-auto object-cover shadow-lg ring-4 ring-blue-100"
                   />
                   <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2">

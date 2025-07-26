@@ -66,11 +66,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}
       >
-             <Script
+             {/* <Script
           src="https://static.elfsight.com/platform/platform.js"
           strategy="afterInteractive"
           async
-        />
+        /> */}
         {children}
       </body>
     </html>
