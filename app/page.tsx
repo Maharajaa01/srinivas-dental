@@ -1,20 +1,64 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect , ChangeEvent, FormEvent } from 'react';
 import ZohoWhatsappWidget from './component/ZohoWhatsappWidget';
+import "remixicon/fonts/remixicon.css";
 import Link from 'next/link';
 
 
 
-
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+}
 
 export default function Home() {
+ const [formData, setFormData] = useState<FormData>({
+    name: '',
+    phone: '',
+    email: '',
+    message: '',
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const isFormValid =
+    formData.name.trim() !== '' &&
+    formData.phone.trim() !== '' &&
+    formData.email.trim() !== '' &&
+    formData.message.trim() !== '';
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  // Allow the native form submit to go through to FormSubmit.co
+  // But delay clearing the state until after the iframe loads (form submission complete)
+  setSubmitted(true);
+
+  // Clear the form data only after a short delay
+  setTimeout(() => {
+    setFormData({ name: '', phone: '', email: '', message: '' });
+    setSubmitted(false);
+  }, 3000);
+};
+
+  
   const [isLoading, setIsLoading] = useState(true);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [showBookingHighlight, setShowBookingHighlight] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+
+
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -74,6 +118,17 @@ export default function Home() {
     }
   ];
   
+  const galleryItems = [ 
+  { category: 'Reception Area', src: '/gallery/reception.jpg' },
+  { category: 'Treatment Room', src: '/gallery/treatment.jpg' },
+  { category: 'Sterilization Area', src: '/gallery/sterilization.jpg' },
+  { category: 'Patient Lounge', src: '/gallery/lounge.jpg' },
+  { category: 'Digital X-Ray', src: '/gallery/xray.jpg' },
+  { category: 'Consultation Room', src: '/gallery/consultation.jpg' },
+  { category: 'Surgery Suite', src: '/gallery/surgery.png' },
+  { category: 'Recovery Area', src: '/gallery/reception.jpg' }
+];
+
   const testimonials = [
     {
       name: 'Priya Sharma',
@@ -158,6 +213,10 @@ export default function Home() {
     setShowBookingHighlight(true);
     setTimeout(() => setShowBookingHighlight(false), 3000);
   };
+  
+
+
+
   
   return (
     <div className="min-h-screen">
@@ -526,29 +585,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="py-16 sm:py-24 bg-white">
+
+{/* Gallery Section */}
+ <section id="gallery" className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Our Clinic Gallery</h2>
             <p className="text-lg sm:text-xl text-gray-600">Take a virtual tour of our modern facility</p>
             <div className="w-16 sm:w-24 h-1 bg-blue-600 mx-auto mt-4 sm:mt-6"></div>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
-            {[ 
-              { category: 'Reception Area', seq: 'gallery1' },
-              { category: 'Treatment Room', seq: 'gallery2' },
-              { category: 'Sterilization Area', seq: 'gallery3' },
-              { category: 'Patient Lounge', seq: 'gallery4' },
-              { category: 'Digital X-Ray', seq: 'gallery5' },
-              { category: 'Consultation Room', seq: 'gallery6' },
-              { category: 'Surgery Suite', seq: 'gallery7' },
-              { category: 'Recovery Area', seq: 'gallery8' }
-            ].map((item, index) => (
-              <div key={index} className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer group h-32 sm:h-48 lg:h-64">
+            {galleryItems.map((item, index) => (
+              <div
+                key={index}
+                onClick={() => {
+                  setCurrentIndex(index);
+                  setIsOpen(true);
+                }}
+                className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer group h-32 sm:h-48 lg:h-64"
+              >
                 <img 
-                  src={`https://readdy.ai/api/search-image?query=modern%20dental%20clinic%20${item.category.toLowerCase()}%2C%20bright%20clean%20medical%20facility%2C%20professional%20dental%20equipment%2C%20contemporary%20design%2C%20sterile%20environment%2C%20comfortable%20patient%20areas&width=300&height=250&seq=${item.seq}&orientation=squarish`}
+                  src={item.src}
                   alt={item.category}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -563,64 +621,134 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        {/* Modal */}
+        {isOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+            <div className="relative bg-white rounded-lg p-4 max-w-xl w-full">
+              <img 
+                src={galleryItems[currentIndex].src}
+                alt={galleryItems[currentIndex].category}
+                className="w-full h-auto rounded"
+              />
+              <p className="text-center mt-2 text-gray-700">{galleryItems[currentIndex].category}</p>
+
+{/* Close Button */}
+<button
+  onClick={() => setIsOpen(false)}
+  className="absolute top-3 right-3 bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full p-2 shadow-md transition"
+>
+  <i className="ri-close-line text-2xl"></i>
+</button>
+
+{/* Previous Button */}
+<button
+  onClick={() =>
+    setCurrentIndex((currentIndex - 1 + galleryItems.length) % galleryItems.length)
+  }
+  className="absolute left-3 top-1/2 -translate-y-1/2 bg-white text-gray-800 hover:text-white hover:bg-blue-600 rounded-full p-3 shadow-lg transition-all"
+>
+  <i className="ri-arrow-left-s-line text-xl sm:text-2xl"></i>
+</button>
+
+{/* Next Button */}
+<button
+  onClick={() => setCurrentIndex((currentIndex + 1) % galleryItems.length)}
+  className="absolute right-3 top-1/2 -translate-y-1/2 bg-white text-gray-800 hover:text-white hover:bg-blue-600 rounded-full p-3 shadow-lg transition-all"
+>
+  <i className="ri-arrow-right-s-line text-xl sm:text-2xl"></i>
+</button>
+
+            </div>
+          </div>
+        )}
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 sm:py-24 bg-gray-50">
+<section id="contact" className="py-16 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Get In Touch</h2>
             <p className="text-lg sm:text-xl text-gray-600">Schedule your appointment today for a healthier, brighter smile</p>
             <div className="w-16 sm:w-24 h-1 bg-blue-600 mx-auto mt-4 sm:mt-6"></div>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
-            <div className={`bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl transition-all duration-500 ${showBookingHighlight ? 'ring-4 ring-blue-500 ring-opacity-50 shadow-2xl' : ''}`}>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">
-                {showBookingHighlight ? 'Book Your Appointment' : 'Send Us a Message'}
-              </h3>
-              <form id="contact-form" className="space-y-4 sm:space-y-6">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">Send Us a Message</h3>
+              <form
+                onSubmit={handleSubmit}
+                action="https://formsubmit.co/vijaymaharajan38@gmail.com"
+                method="POST"
+                target="hidden_iframe"
+                className="space-y-4 sm:space-y-6"
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="box" />
+                <input type="hidden" name="_next" value="about:blank" />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="name"
-                    placeholder="Your Full Name" 
+                    placeholder="Your Full Name"
                     required
-                    className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors text-sm sm:text-base"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm sm:text-base"
                   />
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     name="phone"
-                    placeholder="Your Phone Number" 
+                    placeholder="Your Phone Number"
                     required
-                    className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors text-sm sm:text-base"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm sm:text-base"
                   />
                 </div>
-                <input 
-                  type="email" 
+
+                <input
+                  type="email"
                   name="email"
-                  placeholder="Your Email Address" 
+                  placeholder="Your Email Address"
                   required
-                  className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors text-sm sm:text-base"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm sm:text-base"
                 />
-                <textarea 
+
+                <textarea
                   name="message"
-                  rows={4} 
-                  placeholder="Tell us about your dental concerns or questions..." 
+                  rows={4}
+                  placeholder="Tell us about your dental concerns or questions..."
                   maxLength={500}
                   required
-                  className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent resize-none transition-colors text-sm sm:text-base"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none text-sm sm:text-base"
                 ></textarea>
-                <button 
+
+                <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 sm:py-4 px-6 rounded-xl font-semibold transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer shadow-lg text-sm sm:text-base"
+                  disabled={!isFormValid}
+                  className={`w-full bg-blue-600 hover:bg-blue-700 text-white py-3 sm:py-4 px-6 rounded-xl font-semibold transition-all transform hover:scale-105 text-sm sm:text-base ${!isFormValid ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                   <i className="ri-send-plane-line mr-2"></i>
                   Send Message
                 </button>
               </form>
+
+              {submitted && (
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                  <div className="bg-white text-black p-6 rounded-xl shadow-xl text-center max-w-sm w-full">
+                    <p className="text-xl font-semibold mb-2">✅ Submitted Successfully</p>
+                    <p>Your form has been submitted. We’ll get back to you shortly.</p>
+                  </div>
+                </div>
+              )}
+
+              <iframe name="hidden_iframe" style={{ display: 'none' }}></iframe>
             </div>
-            
             <div className="space-y-8 sm:space-y-10">
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">Contact Information</h3>
@@ -632,13 +760,13 @@ export default function Home() {
                     <div>
                       <h4 className="font-semibold text-gray-900 text-base sm:text-lg mb-2">Our Location</h4>
                       <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                         G Block, , 
-                        No 6, G - Block, 15th Street,Anna Nagar<br />
-                        Chennai, Tamil Nadu 600040<br />
+                        G Block,<br />
+                        No 6, G - Block, 15th Street, Anna Nagar<br />
+                        Chennai, Tamil Nadu 600040
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-xl flex items-center justify-center mr-4 sm:mr-6 flex-shrink-0">
                       <i className="ri-phone-line text-green-600 text-lg sm:text-xl"></i>
@@ -646,12 +774,11 @@ export default function Home() {
                     <div>
                       <h4 className="font-semibold text-gray-900 text-base sm:text-lg mb-2">Phone & WhatsApp</h4>
                       <p className="text-gray-600 text-sm sm:text-base">
-                        <a href="tel:+919876543210" className="hover:text-blue-600 transition-colors">+91 98847 15109</a><br />
-                        {/* <a href="tel:+914428765432" className="hover:text-blue-600 transition-colors">+91 44 2876 5432</a> */}
+                        <a href="tel:+919884715109" className="hover:text-blue-600 transition-colors">+91 98847 15109</a>
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-purple-100 rounded-xl flex items-center justify-center mr-4 sm:mr-6 flex-shrink-0">
                       <i className="ri-time-line text-purple-600 text-lg sm:text-xl"></i>
@@ -668,36 +795,31 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-blue-50 rounded-2xl p-6 sm:p-8">
                 <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Quick Appointment</h4>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Need immediate care? Call us directly or send a WhatsApp message for fastest response.</p>
+                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
+                  Need immediate care? Call us directly or send a WhatsApp message for fastest response.
+                </p>
                 <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                   <a href="tel:9884715109">
-
-
-                  <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-xl font-semibold transition-colors cursor-pointer text-sm sm:text-base">
-                    <i className="ri-phone-line mr-2"></i>
-                    Call Now
-                  </button>
+                    <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-xl font-semibold transition-colors cursor-pointer text-sm sm:text-base">
+                      {/* <i className="ri-phone-line mr-2"></i> */}
+                      Call Now
+                    </button>
                   </a>
-                  <button className="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-xl font-semibold transition-colors cursor-pointer text-sm sm:text-base">
-                    <i className="ri-whatsapp-line mr-2"></i>
-                                      <a
-                    href="https://wa.me/919884715109"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Whatsapp
+                  <a href="https://wa.me/919884715109" target="_blank" rel="noopener noreferrer">
+                    <button className="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-xl font-semibold transition-colors cursor-pointer text-sm sm:text-base">
+                      <i className="ri-whatsapp-line mr-2"></i>
+                      WhatsApp
+                    </button>
                   </a>
-                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Google Maps */}
       <div className="h-64 sm:h-80 lg:h-96 relative">
         <iframe
