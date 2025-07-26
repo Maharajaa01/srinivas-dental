@@ -405,7 +405,7 @@ export default function Home() {
 
                   // src="https://readdy.ai/api/search-image?query=professional%20female%20indian%20dentist%20Dr.%20Kamalavizhi%20Srinivas%20in%20white%20medical%20coat%2C%20warm%20confident%20smile%2C%20modern%20dental%20clinic%20background%2C%20professional%20medical%20portrait%2C%20stethoscope%2C%20caring%20expression%2C%20bright%20lighting&width=600&height=700&seq=doctor-portrait&orientation=portrait"
                   alt="Dr. Kamalavizhi Srinivas"
-                  className="rounded-3xl shadow-2xl object-cover w-full h-96 sm:h-96 lg:h-[830px]"
+                  className="rounded-3xl shadow-2xl object-cover w-full h-100 sm:h-100 lg:h-[830px]"
                   />
               </div>
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl opacity-20 blur-xl"></div>
