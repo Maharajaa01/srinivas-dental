@@ -36,12 +36,10 @@ export default function Home() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-  // Allow the native form submit to go through to FormSubmit.co
-  // But delay clearing the state until after the iframe loads (form submission complete)
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
   setSubmitted(true);
 
-  // Clear the form data only after a short delay
   setTimeout(() => {
     setFormData({ name: '', phone: '', email: '', message: '' });
     setSubmitted(false);
