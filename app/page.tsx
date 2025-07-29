@@ -124,60 +124,74 @@ export default function Home() {
   { category: 'Digital X-Ray', src: '/gallery/xray.jpg' },
   { category: 'Consultation Room', src: '/gallery/consultation.jpg' },
   { category: 'Surgery Suite', src: '/gallery/surgery.png' },
-  { category: 'Recovery Area', src: '/gallery/reception.jpg' }
+  // { category: 'Recovery Area', src: '/gallery/reception.jpg' }
 ];
 
   const testimonials = [
     {
-      name: 'Priya Sharma',
-      image: 'https://readdy.ai/api/search-image?query=professional%20indian%20woman%20smiling%20confidently%20with%20perfect%20teeth%2C%20dental%20patient%20testimonial%20photo%2C%20bright%20modern%20clinic%20background%2C%20natural%20lighting%2C%20happy%20expression&width=80&height=80&seq=testimonial1&orientation=squarish',
-      review: 'Dr. Kamalavizhi transformed my smile completely! The root canal was painless and the results exceeded my expectations. Highly professional and caring team.',
-      rating: 5,
-      treatment: 'Root Canal & Smile Design'
-    },
-    {
-      name: 'Rajesh Kumar',
+      name: 'Rijo Varghese',
       image: 'https://readdy.ai/api/search-image?query=middle%20aged%20indian%20businessman%20smiling%20warmly%2C%20dental%20clinic%20patient%20testimonial%20portrait%2C%20professional%20medical%20background%2C%20confident%20expression&width=80&height=80&seq=testimonial2&orientation=squarish',
-      review: 'Excellent service and modern equipment. The staff is incredibly caring and the clinic maintains the highest standards of cleanliness and professionalism.',
+      review: 'I have known Dr. Kamili for three years now. I am an NRI and visit her clinic everytime when Iam on vacation. Iam very picky when it comes to dentist and she is one among the best dentist I have known so far.  She is very professional and takes time to answer any question. I would highly recommend this clinic anyday',
       rating: 5,
       treatment: 'Dental Implants'
     },
     {
-      name: 'Anitha Reddy',
+      name: 'Radhika Nalliah',
       image: 'https://readdy.ai/api/search-image?query=young%20indian%20woman%20with%20bright%20beautiful%20smile%2C%20dental%20clinic%20setting%2C%20modern%20medical%20facility%20background%2C%20happy%20satisfied%20patient%20portrait&width=80&height=80&seq=testimonial3&orientation=squarish',
-      review: 'Amazing results with my smile makeover! Dr. Srinivas is truly an artist. My confidence has increased tremendously. Thank you for the beautiful work!',
+      review: 'Very comfortable and patient friendly clinic. They give individual care to every patient. I personally suggest my friends to go to Dr. Kamalavizhi',
       rating: 5,
       treatment: 'Cosmetic Dentistry'
     },
     {
-      name: 'Vikram Patel',
+      name: 'Arko Sen',
       image: 'https://readdy.ai/api/search-image?query=indian%20father%20with%20child%20smiling%20at%20dental%20clinic%2C%20family%20dental%20care%2C%20pediatric%20dentistry%20patient%20testimonial%2C%20warm%20family%20portrait&width=80&height=80&seq=testimonial4&orientation=squarish',
-      review: 'My entire family trusts Srinivas Dental. Dr. Kamalavizhi is wonderful with children and makes every visit comfortable. Highly recommend for families!',
+      review: 'Great experience at  Srinivas multi specialty dental clinic. Dr S. Kamalazishi Ramesh is one of the best dentist who has ever worked on my teeth..and resolved the critical issues periodically , RCT was also done very professionally ,  Also, she has given me great tips on maintaining great dental hygiene. I would recommend this clinic to everyone for any kind of dental treatments!',
       rating: 5,
       treatment: 'Family Dentistry'
+    },
+    {
+      name: 'Gomathi Andiappan',
+      image: 'https://readdy.ai/api/search-image?query=professional%20indian%20woman%20smiling%20confidently%20with%20perfect%20teeth%2C%20dental%20patient%20testimonial%20photo%2C%20bright%20modern%20clinic%20background%2C%20natural%20lighting%2C%20happy%20expression&width=80&height=80&seq=testimonial1&orientation=squarish',
+      review: 'Dr. Kamalavizhi transformed my smile completely! The root canal was painless and the results exceeded my expectations. Highly professional and caring team.',
+      rating: 5,
+      treatment: 'Root Canal & Smile Design'
     }
   ];
   
   const googleReviews = [
     {
-      name: 'Meera Krishnan',
+      name: 'Ram Kumar',
       rating: 5,
-      date: '2 days ago',
-      review: 'Outstanding dental care! Dr. Kamalavizhi is extremely skilled and gentle. The clinic is modern and hygienic. Best dental experience in the city!',
+      date: '2 years ago',
+      review: 'Great facility and personal care taken by the Doctor. Would be happy to recommend the flinic to any of my friends',
       verified: true
     },
     {
-      name: 'Suresh Naidu',
+      name: 'Sathyajhith Krishnan',
       rating: 5,
-      date: '1 week ago', 
-      review: 'Professional service with a personal touch. The team made me feel comfortable throughout my treatment. Highly recommended for quality dental care.',
+      date: '2 years ago', 
+      review: 'Excellent with patients of all ages. Truly caring and does not suggest unnecessary treatments, extremely patient focussed.',
       verified: true
     },
     {
-      name: 'Kavitha Raman',
+      name: 'Bharathi',
       rating: 5,
       date: '2 weeks ago',
-      review: 'Fantastic experience! From consultation to treatment, everything was handled with utmost care. Dr. Srinivas is truly the best dentist in town.',
+      review: 'A very caring environment, doctors are quite friendly and provides the right advise.',
+      verified: true
+    },
+        {
+      name: 'Vinil Sunil',
+      rating: 5,
+      date: '3 years ago',
+      review: 'Personal care, available anytime , flexible for working professionals , all expertise under one roof.',
+      verified: true
+    },
+        {
+      name: 'Sakthi R',
+      rating: 5,
+      date: '3 years ago',
+      review: 'Very good treatment done for all dental problem..with latest technology',
       verified: true
     }
   ];
@@ -675,7 +689,7 @@ export default function Home() {
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">Send Us a Message</h3>
               <form
                 onSubmit={handleSubmit}
-                action="https://formsubmit.co/vijaymaharajan38@gmail.com"
+                action="https://formsubmit.co/drkamalavizhi@gmail.com"
                 method="POST"
                 target="hidden_iframe"
                 className="space-y-4 sm:space-y-6"

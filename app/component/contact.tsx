@@ -40,7 +40,7 @@ const ContactForm: React.FC = () => {
   return (
     <>
       <form
-        action="https://formsubmit.co/vijaymaharajan38@gmail.com"
+        action="https://formsubmit.co/drkamalavizhi@gmail.com"
         method="POST"
         target="hidden_iframe"
         onSubmit={handleSubmit}
