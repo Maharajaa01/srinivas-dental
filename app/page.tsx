@@ -541,7 +541,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Google Reviews Section */}
+      {/* Google Reviews Section
       <section className="py-16 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-20">
@@ -595,7 +595,58 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+{/* Google Reviews Section (vertical) */}
+{/* Horizontal swipeable list */}
+<div className="overflow-x-auto snap-x snap-mandatory pb-2">
+  <div className="flex gap-6 sm:gap-8">
+    {googleReviews.map((review, index) => (
+      <div
+        key={index}
+        className="shrink-0 w-72 sm:w-80 bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow snap-start"
+      >
+        <div className="flex items-center mb-4">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+            <span className="font-bold text-blue-600 text-sm sm:text-base">
+              {review.name.charAt(0)}
+            </span>
+          </div>
+          <div className="flex-1 min-w-0">
+            <h4 className="font-semibold text-gray-900 text-sm sm:text-base truncate">
+              {review.name}
+            </h4>
+            <div className="flex items-center">
+              <div className="flex text-yellow-400 mr-2">
+                {[...Array(review.rating)].map((_, i) => (
+                  <i
+                    key={i}
+                    className="ri-star-fill text-xs sm:text-sm"
+                  />
+                ))}
+              </div>
+              <span className="text-xs sm:text-sm text-gray-500">
+                {review.date}
+              </span>
+              {review.verified && (
+                <i className="ri-verified-badge-fill text-blue-500 ml-2" />
+              )}
+            </div>
+          </div>
+        </div>
+        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+          {review.review}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+
+
 
 
 {/* Gallery Section */}
@@ -908,12 +959,12 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
                 2025 Srinivas Dental  All rights reserved Developed By <a 
-                href="https://mavx-tech.vercel.app/" 
+                href="https://www.dreamtechsolution.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white underline ml-1"
               >
-                MAVx
+                Dream Tech Solution
               </a>
   
               </p>
